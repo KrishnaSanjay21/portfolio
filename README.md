@@ -3,7 +3,7 @@
  
 
 📍 Delray Beach, Florida, USA | 📧 [krishnasanjayvaddi2@gmail.com](mailto:krishnasanjayvaddi2@gmail.com)  
-🔗 [GitHub](https://github.com/KrishnaSAN6969) | 🔗 [LinkedIn](www.linkedin.com/in/krishna-sanjay-vaddi)  
+🔗 [GitHub](https://github.com/KrishnaSanjay21) | 🔗 [LinkedIn](www.linkedin.com/in/krishna-sanjay-vaddi)  
 
 ---
 
@@ -51,7 +51,7 @@
 - Preprocessed **structured data**, analyzing **location, amenities, and property types**.  
 - Demonstrated expertise in **feature engineering & data visualization**.  
 
-[🔗 View More Projects on GitHub](https://github.com/KrishnaSAN6969)  
+[🔗 View More Projects on GitHub](https://github.com/KrishnaSanjay21)  
 
 ---
 
@@ -70,7 +70,7 @@
 ---
 
 ## 📫 Connect with Me  
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?logo=github)](https://github.com/KrishnaSAN6969)  
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?logo=github)](https://github.com/KrishnaSanjay21)  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?logo=linkedin)](https://www.linkedin.com/in/krishna-sanjay-vaddi)  
 [![Email](https://img.shields.io/badge/Email-Contact-blue?logo=gmail)](mailto:krishnasanjayvaddi2@gmail.com)  
 
