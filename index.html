@@ -828,6 +828,8 @@
       <span class="tag">Power BI</span>
       <span class="tag">Python</span>
       <span class="tag">NLP</span>
+      <span class="tag">Clinical AI</span>
+      <span class="tag">AWS</span>
     </div>
     <div class="hero-ctas">
       <a href="mailto:krishnasanjayvaddi2@gmail.com" class="btn-primary">
@@ -842,7 +844,7 @@
 
     <div class="stat-bar">
       <div class="stat">
-        <span class="stat-num">4<span>+</span></span>
+        <span class="stat-num">5<span>+</span></span>
         <span class="stat-label">Projects</span>
       </div>
       <div class="divider"></div>
@@ -998,6 +1000,57 @@
       <h2 class="section-title">Featured <em>Projects</em></h2>
     </div>
     <div class="projects-grid">
+
+      <!-- KardioMedicus — featured, spans full width -->
+      <div class="project-card observe project-featured" style="--card-accent: var(--green); grid-column: 1 / -1;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.75rem; margin-bottom:0.75rem;">
+          <div class="project-year" style="margin-bottom:0">2025 · Deployed on AWS</div>
+          <span style="font-size:0.7rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; background:rgba(52,211,153,0.12); color:var(--green); border:1px solid rgba(52,211,153,0.3); padding:4px 12px; border-radius:999px;">🏆 Live in Production</span>
+        </div>
+        <div style="display:flex; align-items:flex-start; gap:1.25rem; flex-wrap:wrap;">
+          <div class="project-icon" style="background:rgba(52,211,153,0.1); border-color:rgba(52,211,153,0.25); font-size:22px; min-width:44px;">🫀</div>
+          <div style="flex:1; min-width:220px;">
+            <div class="project-title" style="font-size:1.2rem; margin-bottom:0.5rem;">KardioMedicus — AI Cardiology Assistant</div>
+            <div class="project-desc" style="margin-bottom:1rem;">Built with <a href="https://www.linkedin.com/in/venkateshreddyningam/" target="_blank" style="color:var(--green); text-decoration:none;">Venkatesh Reddy</a> in one week. Analyzes ECG reports, vitals, blood work, and heart function metrics to generate structured, clinical guideline-backed cardiac risk reports — deployed on AWS and actually running in production.</div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:0.75rem; margin-bottom:1.25rem;">
+              <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.75rem 1rem;">
+                <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:4px;">Vision AI</div>
+                <div style="font-size:0.82rem; color:var(--text);">ViT model on Roboflow classifying ECG into 3 classes + VLM for waveform interpretation</div>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.75rem 1rem;">
+                <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:4px;">RAG Pipeline</div>
+                <div style="font-size:0.82rem; color:var(--text);">Knowledge base of AHA/ACCF/HRS peer-reviewed clinical guidelines — no hallucinations</div>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.75rem 1rem;">
+                <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:4px;">SHAP Risk Scoring</div>
+                <div style="font-size:0.82rem; color:var(--text);">Explainable risk model — clinicians see exactly which features drive predictions. No black boxes.</div>
+              </div>
+              <div style="background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:0.75rem 1rem;">
+                <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:4px;">Multi-Agent Orchestration</div>
+                <div style="font-size:0.82rem; color:var(--text);">3 agents (ECG, Risk, Report) via LangChain with full end-to-end tracing in LangSmith</div>
+              </div>
+            </div>
+            <div class="project-techs">
+              <span class="tech-pill">Python</span>
+              <span class="tech-pill">Vision Transformer</span>
+              <span class="tech-pill">VLM</span>
+              <span class="tech-pill">RAG</span>
+              <span class="tech-pill">LangChain</span>
+              <span class="tech-pill">LangSmith</span>
+              <span class="tech-pill">SHAP</span>
+              <span class="tech-pill">AWS</span>
+              <span class="tech-pill">Roboflow</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:1.25rem; padding-top:1rem; border-top:1px solid var(--border); display:flex; gap:1rem; flex-wrap:wrap;">
+          <a href="https://github.com/KrishnaSanjay21" target="_blank" style="font-size:0.8rem; color:var(--green); text-decoration:none; display:flex; align-items:center; gap:5px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+      </div>
+
       <div class="project-card observe" style="--card-accent: var(--accent)">
         <div class="project-year">Jan 2026</div>
         <div class="project-icon">🛍️</div>
