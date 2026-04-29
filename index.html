@@ -844,7 +844,7 @@
 
     <div class="stat-bar">
       <div class="stat">
-        <span class="stat-num">5<span>+</span></span>
+        <span class="stat-num">6<span>+</span></span>
         <span class="stat-label">Projects</span>
       </div>
       <div class="divider"></div>
@@ -1102,6 +1102,47 @@
           <span class="tech-pill">GIS Maps</span>
           <span class="tech-pill">Time Series</span>
         </div>
+      </div>
+
+      <div class="project-card observe" style="--card-accent: #a78bfa;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;">
+          <div class="project-year" style="margin-bottom:0">2025</div>
+          <span style="font-size:0.7rem; font-weight:500; letter-spacing:0.08em; text-transform:uppercase; background:rgba(167,139,250,0.1); color:#a78bfa; border:1px solid rgba(167,139,250,0.3); padding:3px 10px; border-radius:999px;">Research + ML</span>
+        </div>
+        <div class="project-icon" style="background:rgba(167,139,250,0.1); border-color:rgba(167,139,250,0.25);">🔍</div>
+        <div class="project-title">Homicide Clearance Rate Analysis — 47 Years of FBI Data</div>
+        <div class="project-desc" style="margin-bottom:1rem;">Analyzed 47 years of FBI Supplementary Homicide Report (SHR) data (1976–2023) to uncover <strong style="color:var(--text);font-weight:500">why clearance rates are declining</strong>. Engineered an "Anonymous" feature revealing a strong inverse correlation (r = −0.73) between victim-offender anonymity and case resolution — proving the shift is sociological, not procedural.</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem; margin-bottom:1rem;">
+          <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.65rem 0.875rem;">
+            <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:3px;">Social Link Correlation</div>
+            <div style="font-size:1rem; font-weight:600; color:#34d399;">r = +0.86</div>
+          </div>
+          <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.65rem 0.875rem;">
+            <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:3px;">Anonymity Correlation</div>
+            <div style="font-size:1rem; font-weight:600; color:#f472b6;">r = −0.73</div>
+          </div>
+          <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.65rem 0.875rem;">
+            <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:3px;">Random Forest R²</div>
+            <div style="font-size:1rem; font-weight:600; color:var(--amber);">0.97 (train)</div>
+          </div>
+          <div style="background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:0.65rem 0.875rem;">
+            <div style="font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--muted); margin-bottom:3px;">Poly Regression R²</div>
+            <div style="font-size:1rem; font-weight:600; color:#a78bfa;">0.81 · MAE 1.32%</div>
+          </div>
+        </div>
+        <div class="project-techs" style="margin-bottom:1rem;">
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">Pandas</span>
+          <span class="tech-pill">Scikit-learn</span>
+          <span class="tech-pill">Random Forest</span>
+          <span class="tech-pill">Polynomial Regression</span>
+          <span class="tech-pill">Feature Engineering</span>
+          <span class="tech-pill">LaTeX</span>
+        </div>
+        <a href="https://lnkd.in/eFWbBqi7" target="_blank" style="font-size:0.8rem; color:#a78bfa; text-decoration:none; display:inline-flex; align-items:center; gap:5px; border:1px solid rgba(167,139,250,0.3); padding:5px 12px; border-radius:8px; transition:all 0.2s;" onmouseover="this.style.background='rgba(167,139,250,0.1)'" onmouseout="this.style.background='transparent'">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Read Full Report &amp; Code
+        </a>
       </div>
 
       <div class="project-card observe" style="--card-accent: var(--pink)">
