@@ -265,13 +265,28 @@
   .pub-meta{font-size:13px; color:var(--text-dim); margin-top:8px;}
 
   /* ---------- SKILLS MATRIX ---------- */
-  .skills-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
-  @media (max-width:900px){.skills-grid{grid-template-columns:repeat(2,1fr);}}
-  @media (max-width:520px){.skills-grid{grid-template-columns:1fr;}}
-  .skill-card{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px;}
-  .skill-cat{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--accent-2); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:14px;}
-  .skill-list{display:flex; flex-wrap:wrap; gap:7px;}
-  .skill-pill{font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--text-dim); background:var(--surface-2); border:1px solid var(--border); padding:5px 10px; border-radius:5px;}
+  .skills-editor{
+    background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow);
+  }
+  .skills-tabbar{
+    display:flex; align-items:center; gap:2px; padding:10px 10px 0; border-bottom:1px solid var(--border);
+    background:var(--surface); overflow-x:auto;
+  }
+  .skills-tab{
+    font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--text-faint);
+    background:transparent; border:none; border-bottom:2px solid transparent; padding:10px 16px;
+    cursor:pointer; white-space:nowrap; transition:all .15s;
+  }
+  .skills-tab:hover{color:var(--text-dim);}
+  .skills-tab.active{color:var(--accent); border-bottom-color:var(--accent);}
+  .skills-code{padding:26px 28px; font-family:'JetBrains Mono',monospace; font-size:14px; line-height:1.95;}
+  .skills-code .ln{display:flex; gap:18px;}
+  .skills-code .ln-no{color:var(--text-faint); opacity:.55; user-select:none; min-width:18px; text-align:right;}
+  .skills-code .cmt{color:var(--text-faint);}
+  .skills-code .kw{color:var(--accent-2);}
+  .skills-code .str{color:var(--accent);}
+  .skills-code .punc{color:var(--text-dim);}
 
   /* ---------- FOOTER ---------- */
   footer{border-top:1px solid var(--border); padding:52px 0 40px;}
@@ -482,40 +497,12 @@
     <div class="section-head">
       <div class="section-eyebrow">Toolbox</div>
       <h2>Technical Skills Matrix</h2>
+      <p class="section-desc">Grouped like a codebase — click a file to see the stack.</p>
     </div>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-cat">Languages &amp; Core</div>
-        <div class="skill-list">
-          <span class="skill-pill">Python</span><span class="skill-pill">SQL</span>
-          <span class="skill-pill">C++</span><span class="skill-pill">Bash</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">ML &amp; Computer Vision</div>
-        <div class="skill-list">
-          <span class="skill-pill">PyTorch</span><span class="skill-pill">Scikit-Learn</span>
-          <span class="skill-pill">YOLOv11</span><span class="skill-pill">ByteTrack</span>
-          <span class="skill-pill">Vision Transformers</span><span class="skill-pill">SHAP</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">GenAI &amp; NLP</div>
-        <div class="skill-list">
-          <span class="skill-pill">LLMs</span><span class="skill-pill">RAG</span>
-          <span class="skill-pill">LangChain</span><span class="skill-pill">Multi-Agent Systems</span>
-          <span class="skill-pill">FAISS</span><span class="skill-pill">spaCy</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-cat">MLOps &amp; Cloud</div>
-        <div class="skill-list">
-          <span class="skill-pill">Docker</span><span class="skill-pill">TensorRT</span>
-          <span class="skill-pill">CI/CD</span><span class="skill-pill">pytest</span>
-          <span class="skill-pill">AWS</span><span class="skill-pill">PostgreSQL</span>
-          <span class="skill-pill">Supabase</span>
-        </div>
-      </div>
+
+    <div class="skills-editor">
+      <div class="skills-tabbar" id="skillsTabbar"></div>
+      <div class="skills-code" id="skillsCode"></div>
     </div>
   </div>
 </section>
@@ -769,6 +756,43 @@ document.querySelectorAll('.tab').forEach(tab => {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
     renderProjects(tab.dataset.filter);
+  });
+});
+
+/* ---------------- SKILLS CODE EDITOR ---------------- */
+const skillCategories = [
+  { key:'core',  file:'languages_core.py',   varname:'CORE_STACK',   items:['Python','SQL','Bash'] },
+  { key:'cv',    file:'ml_vision.py',        varname:'CV_STACK',     items:['PyTorch','Scikit-Learn','YOLOv11','ByteTrack','Vision Transformers','SHAP'] },
+  { key:'genai', file:'genai_nlp.py',        varname:'GENAI_STACK',  items:['LLMs','RAG','LangChain','Multi-Agent Systems','FAISS','spaCy'] },
+  { key:'mlops', file:'mlops_cloud.py',      varname:'MLOPS_STACK',  items:['Docker','TensorRT','CI/CD','pytest','AWS','PostgreSQL','Supabase'] }
+];
+
+const skillsTabbar = document.getElementById('skillsTabbar');
+const skillsCode = document.getElementById('skillsCode');
+
+skillsTabbar.innerHTML = skillCategories.map((c, idx) =>
+  `<button class="skills-tab${idx === 0 ? ' active' : ''}" data-key="${c.key}">${c.file}</button>`
+).join('');
+
+function renderSkillCode(key){
+  const cat = skillCategories.find(c => c.key === key);
+  const lines = [];
+  lines.push(`<span class="cmt"># ${cat.file}</span>`);
+  lines.push(`<span class="kw">${cat.varname}</span> <span class="punc">=</span> <span class="punc">[</span>`);
+  cat.items.forEach(item => lines.push(`&nbsp;&nbsp;&nbsp;&nbsp;<span class="str">"${item}"</span><span class="punc">,</span>`));
+  lines.push(`<span class="punc">]</span>`);
+
+  skillsCode.innerHTML = lines.map((html, i) =>
+    `<div class="ln"><span class="ln-no">${i + 1}</span><span>${html}</span></div>`
+  ).join('');
+}
+renderSkillCode(skillCategories[0].key);
+
+skillsTabbar.querySelectorAll('.skills-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    skillsTabbar.querySelectorAll('.skills-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    renderSkillCode(tab.dataset.key);
   });
 });
 
