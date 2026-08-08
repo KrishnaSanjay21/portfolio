@@ -128,10 +128,14 @@
   }
   .term-bar{
     display:flex; align-items:center; gap:8px; padding:10px 14px; border-bottom:1px solid var(--border);
-    background:var(--surface);
+    background:var(--surface); flex-wrap:nowrap; overflow:hidden;
   }
-  .term-bar span{width:10px; height:10px; border-radius:50%; background:var(--border);}
-  .term-bar .lbl{margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--text-faint);}
+  .term-bar .dots{display:flex; align-items:center; gap:6px; flex-shrink:0;}
+  .term-bar .dots span{width:10px; height:10px; border-radius:50%; background:var(--border); display:block;}
+  .term-bar .lbl{
+    margin-left:8px; font-family:'JetBrains Mono',monospace; font-size:11.5px; color:var(--text-faint);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0; flex:1;
+  }
   .term-body{padding:16px 18px; font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.9; min-height:150px;}
   .term-body .ln{color:var(--text-dim); opacity:0; animation:fadeIn .4s forwards;}
   .term-body .ok{color:var(--accent-2);}
@@ -324,7 +328,7 @@
 
     <div class="term">
       <div class="term-bar">
-        <span></span><span></span><span></span>
+        <div class="dots"><span></span><span></span><span></span></div>
         <span class="lbl">~/krishna-vaddi — build.log</span>
       </div>
       <div class="term-body" id="termBody"></div>
