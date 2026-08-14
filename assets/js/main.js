@@ -17,7 +17,7 @@ function setTheme(theme, persist = false) {
   themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
   themeToggle.title = `Switch to ${nextTheme} theme`;
   themeToggle.querySelector("span").textContent = theme === "dark" ? "◐" : "◑";
-  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0a0d12" : "#f7f5ef";
+  document.querySelector('meta[name="theme-color"]').content = theme === "dark" ? "#0b0f17" : "#f7f8fb";
   if (persist) localStorage.setItem("portfolio-theme", theme);
 }
 
