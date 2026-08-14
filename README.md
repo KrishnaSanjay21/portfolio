@@ -15,6 +15,7 @@ A fast, accessible static portfolio for machine learning engineer and data scien
 ## Featured live projects
 
 - [TaxiBot](https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/) — natural-language-to-SQL business-intelligence copilot
+- [ShopGenie-E](https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/) — multi-agent product research, requirements scoring, and comparison dashboard
 - [DataLens](https://datalens-x4seve4uqecrujmqwmzoth.streamlit.app/) — zero-configuration exploratory data analysis
 
 Each featured project links to its public source code. The homicide-clearance project also links directly to its formal report.

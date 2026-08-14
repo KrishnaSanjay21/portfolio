@@ -197,9 +197,43 @@
           <div class="tag-list"><span>Groq</span><span>Llama 3</span><span>SQLite</span><span>Streamlit</span></div>
         </article>
 
+        <article class="project-card project-card-featured" data-category="ai analytics">
+          <div class="project-topline">
+            <span class="project-index mono">03 / LLM Product</span>
+            <div class="project-links">
+              <a href="https://github.com/KrishnaSanjay21/shopgenie" target="_blank" rel="noopener" aria-label="Open ShopGenie-E source code">Code ↗</a>
+              <a class="live-link" href="https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/" target="_blank" rel="noopener" aria-label="Open live ShopGenie-E demo"><span class="live-dot" aria-hidden="true"></span>Live demo</a>
+            </div>
+          </div>
+          <h3>ShopGenie-E</h3>
+          <p>Multi-agent shopping decision-support application that turns a shopper’s intent, budget, and product constraints into ranked comparisons instead of a generic results list.</p>
+          <ul class="result-list">
+            <li>Specialized agents separate intent analysis, product retrieval, comparison, and presentation.</li>
+            <li>A requirements-based <strong>0–10 Genie Score</strong> ranks candidates and explains the trade-offs behind each recommendation.</li>
+          </ul>
+          <p class="pipeline mono">Shopping request → intent agent → retrieval → Genie Score → comparison dashboard</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="ShopGenie-E architecture stages">
+                <li><span class="mono">01</span><strong>Capture requirements</strong><p>The Streamlit interface collects the product category, budget, preferences, and constraints while preserving the conversation context.</p></li>
+                <li><span class="mono">02</span><strong>Analyze intent</strong><p>An intent agent distinguishes casual browsing from a constrained product search and converts the request into structured requirements.</p></li>
+                <li><span class="mono">03</span><strong>Retrieve candidates</strong><p>A retrieval agent gathers relevant products and normalizes their specifications so the candidates can be compared consistently.</p></li>
+                <li><span class="mono">04</span><strong>Reason and rank</strong><p>A reasoner evaluates each product against the stated needs, calculates its 0–10 Genie Score, and produces recommendation rationale and dealbreakers.</p></li>
+                <li><span class="mono">05</span><strong>Present decisions</strong><p>Pandas shapes the comparison matrix while Streamlit renders ranked cards, product images, specifications, and deep-dive trade-offs.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Orchestration</dt><dd>A Python and LangChain backend coordinates the specialized agents and passes structured product data between stages.</dd></div>
+                <div><dt>Outputs</dt><dd>Ranked products, Genie Scores, comparison tables, benefits, specifications, and explicit dealbreakers.</dd></div>
+              </dl>
+            </div>
+          </details>
+          <div class="tag-list"><span>LangChain</span><span>Streamlit</span><span>Pandas</span><span>Multi-Agent</span></div>
+        </article>
+
         <article class="project-card" data-category="analytics">
           <div class="project-topline">
-            <span class="project-index mono">03 / Analytics</span>
+            <span class="project-index mono">04 / Analytics</span>
             <div class="project-links">
               <a href="https://github.com/KrishnaSanjay21/DataLens" target="_blank" rel="noopener" aria-label="Open DataLens source code">Code ↗</a>
               <a class="live-link" href="https://datalens-x4seve4uqecrujmqwmzoth.streamlit.app/" target="_blank" rel="noopener" aria-label="Open live DataLens demo"><span class="live-dot" aria-hidden="true"></span>Live demo</a>
@@ -232,7 +266,7 @@
 
         <article class="project-card" data-category="ml analytics">
           <div class="project-topline">
-            <span class="project-index mono">04 / Forecasting</span>
+            <span class="project-index mono">05 / Forecasting</span>
             <div class="project-links">
               <a href="https://github.com/KrishnaSanjay21/retail-demand-forecasting" target="_blank" rel="noopener" aria-label="Open retail demand forecasting source code">Code ↗</a>
             </div>
@@ -264,7 +298,7 @@
 
         <article class="project-card" data-category="ml analytics">
           <div class="project-topline">
-            <span class="project-index mono">05 / Decision Science</span>
+            <span class="project-index mono">06 / Decision Science</span>
             <div class="project-links">
               <a href="https://github.com/KrishnaSanjay21/causal-uplift-experimentation" target="_blank" rel="noopener" aria-label="Open causal uplift project source code">Code ↗</a>
             </div>
@@ -296,7 +330,7 @@
 
         <article class="project-card" data-category="ml analytics">
           <div class="project-topline">
-            <span class="project-index mono">06 / Statistical ML</span>
+            <span class="project-index mono">07 / Statistical ML</span>
             <div class="project-links">
               <a href="https://github.com/KrishnaSanjay21/homicide-clearance-analysis" target="_blank" rel="noopener" aria-label="Open homicide clearance analysis source code">Code ↗</a>
               <a href="https://github.com/KrishnaSanjay21/homicide-clearance-analysis/blob/main/Homicide_Clearance_Rates_Report_Vaddi.pdf" target="_blank" rel="noopener" aria-label="Read the homicide clearance analysis report">Read report ↗</a>
@@ -334,7 +368,6 @@
           <h3>Additional repositories</h3>
         </div>
         <div class="more-links">
-          <a href="https://github.com/KrishnaSanjay21/shopgenie" target="_blank" rel="noopener">ShopGenie-E <span>Multi-agent shopping assistant ↗</span></a>
           <a href="https://github.com/KrishnaSanjay21/ecommerce-product-analytics" target="_blank" rel="noopener">E-commerce Analytics <span>GA4-style SQL warehouse ↗</span></a>
           <a href="https://github.com/KrishnaSanjay21/ai-content-engine" target="_blank" rel="noopener">AI Content Engine <span>Automated content workflow ↗</span></a>
         </div>
