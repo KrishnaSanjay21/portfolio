@@ -1,4 +1,4 @@
-# Krishna Sanjay Vaddi — Portfolio
+# Krishna Sanjay Vaddi - Portfolio
 
 A fast, accessible static portfolio for machine learning engineer and data scientist Krishna Sanjay Vaddi.
 
@@ -9,20 +9,16 @@ A fast, accessible static portfolio for machine learning engineer and data scien
 - Edge computer vision and TensorRT validation
 - LLM-powered analytics products with working demos
 - Forecasting, causal inference, and statistical modeling
-- Professional experience and education
-- Peer-reviewed publications with publisher links
+- Analytics engineering and AI product workflows
+- Professional experience, education, and peer-reviewed publications
 
 ## Featured live projects
 
-- [TaxiBot](https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/) — natural-language-to-SQL business-intelligence copilot
-- [ShopGenie-E](https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/) — multi-agent product research, requirements scoring, and comparison dashboard
-- [DataLens](https://datalens-x4seve4uqecrujmqwmzoth.streamlit.app/) — zero-configuration exploratory data analysis
+- [TaxiBot](https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/) - natural-language-to-SQL business-intelligence copilot
+- [ShopGenie-E](https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/) - multi-agent product research, requirements scoring, and comparison dashboard
+- [DataLens](https://datalens-x4seve4uqecrujmqwmzoth.streamlit.app/) - zero-configuration exploratory data analysis
 
-Each featured project links to its public source code. The homicide-clearance project also links directly to its formal report.
-
-Every featured card includes an expandable architecture breakdown covering data flow, model or analysis components, validation, outputs, and deployment boundaries.
-
-The portfolio also includes dedicated, evidence-based case studies for the YOLOv11 TensorRT audit suite, TaxiBot, and ShopGenie-E, plus a downloadable ML Engineer résumé.
+All nine public projects have dedicated, evidence-based case studies. Real interface captures are used where a deployed product exists; projects without screenshots use responsive system-architecture diagrams. Each page explains the problem, data flow, engineering decisions, outputs, limitations, and next milestone.
 
 ## Local development
 
@@ -34,22 +30,19 @@ python -m http.server 4173
 
 Then open `http://localhost:4173`.
 
-## Structure
+## Project case studies
 
 ```text
-portfolio/
-├── index.html
-├── krishna_vaddi.webp
-├── sitemap.xml
-├── projects/
-│   ├── yolov11-int8.html
-│   ├── taxibot.html
-│   └── shopgenie.html
-└── assets/
-    ├── css/custom.css
-    ├── documents/
-    ├── images/
-    └── js/main.js
+projects/
+|-- yolov11-int8.html
+|-- taxibot.html
+|-- shopgenie.html
+|-- datalens.html
+|-- retail-demand-forecasting.html
+|-- causal-uplift-experimentation.html
+|-- homicide-clearance-analysis.html
+|-- ecommerce-product-analytics.html
+`-- ai-content-engine.html
 ```
 
 ## Accessibility and performance
@@ -60,7 +53,7 @@ portfolio/
 - Accessible project-filter state
 - Persistent light/dark theme preference
 - Semantic headings, landmarks, and descriptive external-link labels
-- Optimized WebP portrait
+- Optimized image assets and code-native architecture diagrams
 
 ## Contact
 
