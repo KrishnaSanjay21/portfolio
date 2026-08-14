@@ -145,6 +145,22 @@
             <li>Per-class mAP comparison and selective FP16 fallback planning.</li>
           </ul>
           <p class="pipeline mono">FP32 model → calibration → TensorRT INT8 → accuracy audit</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="YOLO TensorRT architecture stages">
+                <li><span class="mono">01</span><strong>Export</strong><p>Ultralytics YOLOv11s weights are exported to ONNX with locked input shapes and preprocessing assumptions.</p></li>
+                <li><span class="mono">02</span><strong>Build baselines</strong><p>FP32 and FP16 TensorRT engines establish accuracy and latency baselines before quantization.</p></li>
+                <li><span class="mono">03</span><strong>Calibrate INT8</strong><p>Entropy and min-max calibrators run 32, 128, and 512-image sweeps with reusable calibration caches.</p></li>
+                <li><span class="mono">04</span><strong>Audit accuracy</strong><p>COCO-style per-class mAP and output-difference checks flag regressions greater than two percent.</p></li>
+                <li><span class="mono">05</span><strong>Plan precision</strong><p>SQNR sensitivity ranks fragile layers and produces selective FP16 fallback plans for Jetson deployment.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Execution split</dt><dd>NumPy/pytest validation runs on any host; TensorRT, CUDA, engine builds, and benchmarks run on Jetson Orin NX.</dd></div>
+                <div><dt>Outputs</dt><dd>Engine files, raw benchmark JSON, per-class accuracy tables, precision decisions, and a rendered benchmark report.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>TensorRT</span><span>YOLOv11</span><span>pytest</span><span>Jetson Orin</span></div>
         </article>
 
@@ -162,7 +178,22 @@
             <li><strong>50,000 trip records</strong> covering NYC taxi activity from 2022–2024.</li>
             <li>Groq-hosted Llama 3, Plotly charts, and a Streamlit interface.</li>
           </ul>
-          <p class="pipeline mono">Question → Llama 3 → validated SQL → chart + insight</p>
+          <p class="pipeline mono">Question → Llama 3 → generated SQL → chart + insight</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="TaxiBot architecture stages">
+                <li><span class="mono">01</span><strong>Conversation UI</strong><p>Streamlit captures the question and maintains the context required for follow-up analysis.</p></li>
+                <li><span class="mono">02</span><strong>LLM planning</strong><p>Groq-hosted Llama 3 reads the schema, identifies intent, and returns SQL, a chart type, and an explanation plan.</p></li>
+                <li><span class="mono">03</span><strong>Query execution</strong><p>The generated statement runs against an embedded SQLite database containing 50,000 taxi-trip records.</p></li>
+                <li><span class="mono">04</span><strong>Result rendering</strong><p>Pandas shapes the result, Plotly renders the selected visualization, and the LLM explains the business insight.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Data layer</dt><dd>Deterministic trip data spans boroughs, fares, routes, time dimensions, payment types, and passenger counts.</dd></div>
+                <div><dt>Delivery</dt><dd>Single Streamlit application with secrets-managed Groq credentials and a publicly deployed interface.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>Groq</span><span>Llama 3</span><span>SQLite</span><span>Streamlit</span></div>
         </article>
 
@@ -181,6 +212,21 @@
             <li>Flags missingness, duplicates, outliers, skew, and high cardinality.</li>
           </ul>
           <p class="pipeline mono">CSV → profiling → quality flags → interactive report</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="DataLens architecture stages">
+                <li><span class="mono">01</span><strong>Ingest</strong><p>Streamlit accepts an arbitrary CSV or loads a built-in Titanic, Iris, or NYC Taxi demonstration dataset.</p></li>
+                <li><span class="mono">02</span><strong>Profile</strong><p>Pandas infers column types and calculates shape, missingness, duplicates, cardinality, skewness, and summary statistics.</p></li>
+                <li><span class="mono">03</span><strong>Diagnose</strong><p>Deterministic rules assign severity to quality issues and generate plain-English findings without an external API.</p></li>
+                <li><span class="mono">04</span><strong>Visualize</strong><p>Plotly builds distributions, box plots, correlations, scatter matrices, and categorical breakdowns.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Privacy boundary</dt><dd>Analysis runs inside the application process; no dataset is sent to an LLM or third-party inference service.</dd></div>
+                <div><dt>Outputs</dt><dd>Searchable data preview, ranked warnings, downloadable summaries, and an interactive statistical report.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>Python</span><span>Pandas</span><span>Plotly</span><span>Streamlit</span></div>
         </article>
 
@@ -198,6 +244,21 @@
             <li>Supports the UCI Online Retail II dataset with more than one million transactions.</li>
           </ul>
           <p class="pipeline mono">Transactions → lag features → backtest → inventory plan</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="Retail forecasting architecture stages">
+                <li><span class="mono">01</span><strong>Prepare demand</strong><p>Synthetic data or UCI Online Retail II transactions are cleaned, returns are excluded, and sales are aggregated by SKU and day.</p></li>
+                <li><span class="mono">02</span><strong>Build features</strong><p>Shifted lags, rolling statistics, calendar signals, price, and promotion features prevent target leakage.</p></li>
+                <li><span class="mono">03</span><strong>Backtest</strong><p>Ridge forecasts the most recent chronological window and is compared with a seven-day seasonal-naive baseline.</p></li>
+                <li><span class="mono">04</span><strong>Plan inventory</strong><p>Residual-based 90% intervals feed service-level safety-stock and reorder-point calculations for each SKU.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Evaluation</dt><dd>Per-SKU WAPE, MAE, RMSE, bias, interval coverage, and baseline improvement are reported.</dd></div>
+                <div><dt>Outputs</dt><dd>HTML report, backtest forecasts, portfolio summary JSON, and SKU-level inventory recommendations.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>Time Series</span><span>Ridge</span><span>Backtesting</span><span>Python</span></div>
         </article>
 
@@ -215,6 +276,21 @@
             <li>Adapter for the corrected 14-million-row Criteo uplift dataset.</li>
           </ul>
           <p class="pipeline mono">RCT → effect estimate → uplift model → targeting policy</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="Causal uplift architecture stages">
+                <li><span class="mono">01</span><strong>Ingest experiment</strong><p>A reproducible synthetic RCT or corrected Criteo uplift data supplies features, treatment assignment, and conversion outcomes.</p></li>
+                <li><span class="mono">02</span><strong>Measure experiment</strong><p>Treatment and control rates produce absolute lift, relative lift, p-values, and 95% confidence intervals.</p></li>
+                <li><span class="mono">03</span><strong>Estimate uplift</strong><p>Separate regularized logistic models estimate treated and untreated response probabilities; their difference is the CATE score.</p></li>
+                <li><span class="mono">04</span><strong>Build policy</strong><p>Customers are ranked into deciles and evaluated with uplift curves and observed incremental conversions.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Validation</dt><dd>Randomized outcomes—not classifier accuracy alone—measure whether the targeting policy creates incremental value.</dd></div>
+                <div><dt>Outputs</dt><dd>Experiment summary JSON, uplift segments, uplift-curve data, automated tests, and an HTML decision report.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>Causal ML</span><span>A/B Testing</span><span>Logistic Regression</span></div>
         </article>
 
@@ -233,6 +309,21 @@
             <li>Degree-three polynomial model achieved <strong>R² = 0.81</strong> and 1.32% MAE.</li>
           </ul>
           <p class="pipeline mono">FBI cases → feature engineering → model comparison → forecast</p>
+          <details class="architecture">
+            <summary><span>Detailed architecture</span><span class="architecture-icon" aria-hidden="true"></span></summary>
+            <div class="architecture-body">
+              <ol class="architecture-flow" aria-label="Homicide clearance analysis architecture stages">
+                <li><span class="mono">01</span><strong>Ingest</strong><p>FBI Supplementary Homicide Report case records from 1976–2023 are cleaned and aggregated into national annual measures.</p></li>
+                <li><span class="mono">02</span><strong>Engineer signals</strong><p>Relationship categories are consolidated into an “Anonymous” feature representing stranger and unknown-offender cases.</p></li>
+                <li><span class="mono">03</span><strong>Compare models</strong><p>Polynomial regression, random forest, and SVR are evaluated for historical fit and their ability to extrapolate over time.</p></li>
+                <li><span class="mono">04</span><strong>Report findings</strong><p>The selected degree-three model supports the forecast while Plotly, Power BI, and LaTeX communicate evidence and limitations.</p></li>
+              </ol>
+              <dl class="architecture-notes">
+                <div><dt>Model decision</dt><dd>Tree models fit historical data strongly but flatten outside the training range; polynomial regression better preserves the long-run trend.</dd></div>
+                <div><dt>Outputs</dt><dd>Notebook analysis, correlation and forecast visualizations, and a linked formal PDF report.</dd></div>
+              </dl>
+            </div>
+          </details>
           <div class="tag-list"><span>Regression</span><span>Scikit-learn</span><span>Power BI</span><span>LaTeX</span></div>
         </article>
       </div>

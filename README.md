@@ -19,6 +19,8 @@ A fast, accessible static portfolio for machine learning engineer and data scien
 
 Each featured project links to its public source code. The homicide-clearance project also links directly to its formal report.
 
+Every featured card includes an expandable architecture breakdown covering data flow, model or analysis components, validation, outputs, and deployment boundaries.
+
 ## Local development
 
 No build step is required.
