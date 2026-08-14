@@ -606,6 +606,32 @@ footer h2 {
   margin-bottom: 12px;
 }
 
+.project-media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 22px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--bg-elevated);
+}
+
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.project-media-diagram img {
+  background: #fff;
+  object-fit: contain;
+}
+
+.project-card:hover .project-media img {
+  transform: scale(1.012);
+}
+
 .project-index {
   color: var(--signal);
   font-size: 11px;
@@ -1153,6 +1179,276 @@ footer {
   min-height: 44px;
 }
 
+/* Case studies */
+.case-main {
+  overflow: hidden;
+}
+
+.case-hero {
+  padding-block: 82px 54px;
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 24px;
+  color: var(--text-subtle);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
+
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.42fr);
+  align-items: end;
+  gap: 64px;
+}
+
+.case-hero h1 {
+  max-width: 900px;
+  margin-bottom: 22px;
+  font-size: clamp(42px, 6vw, 72px);
+}
+
+.case-deck {
+  max-width: 780px;
+  margin-bottom: 0;
+  color: var(--text-muted);
+  font-size: clamp(17px, 1.7vw, 20px);
+}
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.case-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin-top: 52px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--border);
+}
+
+.case-stats > div {
+  min-height: 126px;
+  padding: 22px;
+  background: var(--surface);
+}
+
+.case-stats strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.case-stats span {
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.case-visual {
+  margin: 0;
+  padding-block: 34px 18px;
+}
+
+.case-visual-frame {
+  overflow: hidden;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.case-visual img {
+  width: 100%;
+  height: auto;
+}
+
+.case-visual figcaption {
+  margin-top: 12px;
+  color: var(--text-subtle);
+  font-size: 12px;
+}
+
+.case-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  align-items: start;
+  gap: clamp(46px, 8vw, 100px);
+  padding-block: 70px 110px;
+}
+
+.case-content {
+  max-width: 760px;
+}
+
+.case-content > section {
+  padding-block: 0 58px;
+}
+
+.case-content > section + section {
+  padding-top: 58px;
+  border-top: 1px solid var(--border);
+}
+
+.case-content h2 {
+  margin-bottom: 18px;
+  font-size: clamp(27px, 3vw, 36px);
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.case-content h3 {
+  margin: 28px 0 8px;
+  font-size: 18px;
+}
+
+.case-content p,
+.case-content li {
+  color: var(--text-muted);
+}
+
+.case-content ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+}
+
+.case-flow {
+  display: grid;
+  gap: 10px;
+  margin-top: 26px;
+  padding: 0;
+  list-style: none;
+  counter-reset: case-step;
+}
+
+.case-flow li {
+  position: relative;
+  padding: 18px 18px 18px 58px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+  counter-increment: case-step;
+}
+
+.case-flow li::before {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: var(--signal);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  content: "0" counter(case-step);
+}
+
+.case-flow strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.case-flow p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.case-callout {
+  margin-top: 24px;
+  padding: 20px 22px;
+  border-left: 3px solid var(--accent);
+  border-radius: 0 9px 9px 0;
+  background: var(--accent-soft);
+}
+
+.case-callout strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text);
+}
+
+.case-callout p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.case-sidebar {
+  position: sticky;
+  top: 104px;
+  display: grid;
+  gap: 14px;
+}
+
+.case-sidebar-card {
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.case-sidebar-card h2 {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.case-meta {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+}
+
+.case-meta div {
+  display: grid;
+  gap: 3px;
+}
+
+.case-meta dt {
+  color: var(--text-subtle);
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.case-meta dd {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.case-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding-block: 30px 80px;
+  border-top: 1px solid var(--border);
+}
+
+.case-nav a {
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.case-nav a:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 900px) {
   .nav {
     grid-template-columns: auto 1fr auto auto;
@@ -1166,6 +1462,10 @@ footer {
 
   .nav-actions {
     grid-column: 4;
+  }
+
+  .nav-actions .button {
+    display: none;
   }
 
   .nav-links {
@@ -1211,9 +1511,20 @@ footer {
   }
 
   .experience-grid,
-  .footer-grid {
+  .footer-grid,
+  .case-hero-grid,
+  .case-layout {
     grid-template-columns: 1fr;
     gap: 44px;
+  }
+
+  .case-actions {
+    justify-content: flex-start;
+  }
+
+  .case-sidebar {
+    position: static;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -1285,6 +1596,18 @@ footer {
     padding: 23px;
   }
 
+  .case-hero {
+    padding-block: 58px 38px;
+  }
+
+  .case-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .case-layout {
+    padding-block: 54px 76px;
+  }
+
   .project-topline {
     flex-direction: column;
   }
@@ -1326,6 +1649,10 @@ footer {
 
   .publication-card {
     min-height: 0;
+  }
+
+  .case-sidebar {
+    grid-template-columns: 1fr;
   }
 
   .publication-card a {

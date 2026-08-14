@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study: a host/device audit suite for YOLOv11s INT8 TensorRT deployment on NVIDIA Jetson Orin NX.">
+  <meta name="theme-color" content="#0b0f17">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="YOLOv11s INT8 TensorRT Audit Suite — Krishna Vaddi">
+  <meta property="og:description" content="Quantization, per-class accuracy auditing, mixed-precision planning, and Jetson deployment evidence.">
+  <meta property="og:url" content="https://krishnasanjay21.github.io/portfolio/projects/yolov11-int8.html">
+  <meta property="og:image" content="https://krishnasanjay21.github.io/portfolio/assets/images/projects/yolov11-int8-architecture.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://krishnasanjay21.github.io/portfolio/projects/yolov11-int8.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230b0f17%22/><path d=%22M18 14v36M46 14 28 32l18 18%22 fill=%22none%22 stroke=%22%23f5a742%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <title>YOLOv11s INT8 TensorRT Audit Suite — Krishna Vaddi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareSourceCode",
+    "name": "YOLOv11s INT8 TensorRT Audit Suite",
+    "codeRepository": "https://github.com/KrishnaSanjay21/yolov11-int8-orin",
+    "programmingLanguage": ["Python", "C++", "CUDA"],
+    "runtimePlatform": "NVIDIA Jetson Orin NX",
+    "author": {"@type": "Person", "name": "Krishna Sanjay Vaddi"}
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="nav shell">
+      <a class="brand" href="../index.html" aria-label="Krishna Vaddi, portfolio home">
+        <img src="../krishna_vaddi.webp" alt="" width="32" height="32">
+        <span class="status-dot" aria-hidden="true"></span><span>Krishna Vaddi</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav"><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+      <nav class="nav-links" id="siteNav" aria-label="Primary navigation">
+        <a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a href="../index.html#skills">Skills</a><a href="../index.html#publications">Publications</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme"><span aria-hidden="true">◐</span></button>
+        <a class="button button-small button-ghost" href="../assets/documents/Krishna_Sanjay_Vaddi_ML_Engineer_Resume.pdf" download>Résumé ↓</a>
+        <a class="button button-small button-ghost" href="mailto:krishnasanjayvaddi2@gmail.com">Let's talk</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="case-main" id="main-content">
+    <section class="case-hero shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Portfolio</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>YOLOv11 INT8</span></nav>
+      <div class="case-hero-grid">
+        <div>
+          <p class="section-kicker">ML systems · Edge deployment</p>
+          <h1>YOLOv11s INT8 TensorRT Audit Suite</h1>
+          <p class="case-deck">A reproducible host/device toolkit for quantizing object detection on Jetson Orin NX while keeping every accuracy regression visible at the class level.</p>
+        </div>
+        <div class="case-actions">
+          <a class="button button-primary" href="https://github.com/KrishnaSanjay21/yolov11-int8-orin" target="_blank" rel="noopener">View source ↗</a>
+          <a class="button button-ghost" href="https://github.com/KrishnaSanjay21/yolov11-int8-orin/blob/main/BENCHMARKS.md" target="_blank" rel="noopener">Benchmarks ↗</a>
+        </div>
+      </div>
+      <div class="case-stats" aria-label="Project evidence">
+        <div><strong>56</strong><span>Host and device-oriented automated tests</span></div>
+        <div><strong>3</strong><span>Calibration-set sizes: 32, 128, and 512 images</span></div>
+        <div><strong>2</strong><span>Entropy and min-max calibration strategies</span></div>
+        <div><strong>&gt;2%</strong><span>Per-class AP regression flagging threshold</span></div>
+      </div>
+    </section>
+
+    <figure class="case-visual shell">
+      <div class="case-visual-frame"><img src="../assets/images/projects/yolov11-int8-architecture.png" alt="YOLOv11 INT8 deployment architecture from FP32 export through mixed-precision Jetson validation" width="1672" height="941"></div>
+      <figcaption>Host-testable quantization logic and device-only TensorRT execution are deliberately separated.</figcaption>
+    </figure>
+
+    <div class="case-layout shell">
+      <article class="case-content">
+        <section>
+          <p class="section-kicker">The problem</p>
+          <h2>Speed is useful only when accuracy accounting is honest.</h2>
+          <p>Aggregate mAP can hide the exact classes damaged by INT8 quantization. This project treats conversion as an auditable engineering decision: establish FP32 and FP16 baselines, sweep calibration choices, compare every class, and add FP16 back only where the evidence supports it.</p>
+          <div class="case-callout"><strong>Design principle</strong><p>No Jetson latency, power, memory, or accuracy number is hand-entered. Device measurements must be produced by committed scripts and rendered from raw JSON.</p></div>
+        </section>
+
+        <section>
+          <p class="section-kicker">System design</p>
+          <h2>A host/device split that remains testable without the target hardware.</h2>
+          <ol class="case-flow">
+            <li><strong>Export and baseline</strong><p>Lock preprocessing and input shapes, export YOLOv11s to ONNX, then build FP32 and FP16 TensorRT engines.</p></li>
+            <li><strong>Calibrate systematically</strong><p>Compare entropy and min-max activation scales at 32, 128, and 512 images with reproducible subsets and cached calibration artifacts.</p></li>
+            <li><strong>Audit accuracy</strong><p>Compute COCO-style mAP@50 and mAP@50-95 per class and flag any absolute drop above two percentage points.</p></li>
+            <li><strong>Rank sensitive layers</strong><p>Use SQNR to identify poorly represented activations and generate top-1, top-3, and top-5 selective FP16 plans.</p></li>
+            <li><strong>Measure on device</strong><p>Run locked-clock accuracy and 1,000-iteration latency benchmarks on Jetson Orin NX, then render the report from raw outputs.</p></li>
+          </ol>
+        </section>
+
+        <section>
+          <p class="section-kicker">Engineering decisions</p>
+          <h2>Precision is assigned by failure mode, not by habit.</h2>
+          <h3>Calibration selection</h3>
+          <p>Entropy calibration is expected to preserve resolution for the bulk of heavy-tailed detection activations, while min-max avoids clipping. The committed rule selects the higher mAP@50-95 result and breaks ties using the number of flagged classes.</p>
+          <h3>Fused DFL decode</h3>
+          <p>A custom TensorRT plugin fuses softmax and expectation for the distribution-focal-loss decode. It stays in FP32 because global normalization is precision-sensitive; the host reference passes at approximately 2.6e-6 maximum absolute error.</p>
+          <h3>Selective fallback</h3>
+          <p>The deployment ladder adds FP16 to the lowest-SQNR layers until class regressions clear, then stops. This makes the accuracy-per-millisecond trade-off explicit.</p>
+        </section>
+
+        <section>
+          <p class="section-kicker">Evidence &amp; limits</p>
+          <h2>What is proven—and what is still pending.</h2>
+          <ul>
+            <li>The host-side calibration, mAP, sensitivity, precision-planning, reporting, and plugin-reference layers are covered by 56 automated tests.</li>
+            <li>Device scripts capture mean and p99 latency, throughput, INA3221 power, memory delta, aggregate mAP, and per-class deltas.</li>
+            <li>The published benchmark table intentionally remains blank until a real Orin run supplies the raw measurement files.</li>
+          </ul>
+          <div class="case-callout"><strong>Next milestone</strong><p>Execute the full engine matrix on Jetson Orin NX, populate the benchmark report, and select the final mixed-precision configuration using the committed rules.</p></div>
+        </section>
+      </article>
+
+      <aside class="case-sidebar" aria-label="Project summary">
+        <div class="case-sidebar-card">
+          <h2>Project scope</h2>
+          <dl class="case-meta">
+            <div><dt>Role</dt><dd>ML systems engineering</dd></div>
+            <div><dt>Target</dt><dd>NVIDIA Jetson Orin NX</dd></div>
+            <div><dt>Stack</dt><dd>Python, TensorRT, CUDA, NumPy, pytest</dd></div>
+            <div><dt>Outputs</dt><dd>Engines, caches, raw JSON, accuracy tables, benchmark report</dd></div>
+          </dl>
+        </div>
+        <div class="case-sidebar-card"><h2>Core concerns</h2><div class="tag-list"><span>Quantization</span><span>Per-class mAP</span><span>SQNR</span><span>Mixed precision</span><span>Edge AI</span></div></div>
+      </aside>
+    </div>
+
+    <nav class="case-nav shell" aria-label="Case study navigation"><a href="../index.html#projects">← All projects</a><a href="taxibot.html">Next: TaxiBot →</a></nav>
+  </main>
+  <footer id="contact"><div class="shell footer-bottom"><p>© 2026 Krishna Sanjay Vaddi</p><a href="mailto:krishnasanjayvaddi2@gmail.com">Start a conversation ↗</a></div></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

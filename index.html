@@ -29,19 +29,25 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Krishna Sanjay Vaddi",
-    "url": "https://krishnasanjay21.github.io/portfolio/",
-    "image": "https://raw.githubusercontent.com/KrishnaSanjay21/portfolio/main/krishna_vaddi.webp",
-    "jobTitle": "Machine Learning Engineer",
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Florida Atlantic University"
-    },
-    "sameAs": [
-      "https://github.com/KrishnaSanjay21",
-      "https://www.linkedin.com/in/krishna-sanjay-vaddi"
-    ]
+    "@type": "ProfilePage",
+    "dateModified": "2026-08-14",
+    "mainEntity": {
+      "@id": "https://krishnasanjay21.github.io/portfolio/#krishna-vaddi",
+      "@type": "Person",
+      "name": "Krishna Sanjay Vaddi",
+      "url": "https://krishnasanjay21.github.io/portfolio/",
+      "image": "https://raw.githubusercontent.com/KrishnaSanjay21/portfolio/main/krishna_vaddi.webp",
+      "jobTitle": "Machine Learning Engineer",
+      "description": "Machine learning engineer building deployable computer vision, LLM, and analytics systems.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Florida Atlantic University"
+      },
+      "sameAs": [
+        "https://github.com/KrishnaSanjay21",
+        "https://www.linkedin.com/in/krishna-sanjay-vaddi"
+      ]
+    }
   }
   </script>
 </head>
@@ -75,6 +81,7 @@
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme">
           <span aria-hidden="true">◐</span>
         </button>
+        <a class="button button-small button-ghost" href="assets/documents/Krishna_Sanjay_Vaddi_ML_Engineer_Resume.pdf" download>Résumé <span aria-hidden="true">↓</span></a>
         <a class="button button-small button-ghost" href="mailto:krishnasanjayvaddi2@gmail.com">Let's talk</a>
       </div>
     </div>
@@ -95,6 +102,7 @@
 
         <div class="hero-actions">
           <a class="button button-primary" href="#projects">Explore selected work <span aria-hidden="true">↓</span></a>
+          <a class="button button-ghost" href="assets/documents/Krishna_Sanjay_Vaddi_ML_Engineer_Resume.pdf" download>Download résumé <span aria-hidden="true">↓</span></a>
           <a class="button button-ghost" href="https://github.com/KrishnaSanjay21" target="_blank" rel="noopener">View GitHub <span aria-hidden="true">↗</span></a>
         </div>
       </div>
@@ -141,9 +149,13 @@
           <div class="project-topline">
             <span class="project-index mono">01 / ML &amp; Edge</span>
             <div class="project-links">
+              <a href="projects/yolov11-int8.html" aria-label="Read the YOLOv11 TensorRT case study">Case study →</a>
               <a href="https://github.com/KrishnaSanjay21/yolov11-int8-orin" target="_blank" rel="noopener" aria-label="Open YOLOv11 TensorRT project source code">Code ↗</a>
             </div>
           </div>
+          <a class="project-media project-media-diagram" href="projects/yolov11-int8.html" aria-label="Read the YOLOv11 TensorRT case study">
+            <img src="assets/images/projects/yolov11-int8-architecture.png" alt="YOLOv11 INT8 deployment architecture from model preparation through Jetson validation" width="1672" height="941" loading="lazy">
+          </a>
           <h3>YOLOv11s INT8 TensorRT Audit Suite</h3>
           <p>Host/device validation toolkit for converting YOLOv11s from FP32 to FP16 and INT8 on NVIDIA Jetson Orin NX without hiding per-class regressions.</p>
           <ul class="result-list">
@@ -174,10 +186,14 @@
           <div class="project-topline">
             <span class="project-index mono">02 / LLM Product</span>
             <div class="project-links">
+              <a href="projects/taxibot.html" aria-label="Read the TaxiBot case study">Case study →</a>
               <a href="https://github.com/KrishnaSanjay21/taxibot" target="_blank" rel="noopener" aria-label="Open TaxiBot source code">Code ↗</a>
               <a class="live-link" href="https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/" target="_blank" rel="noopener" aria-label="Open live TaxiBot demo"><span class="live-dot" aria-hidden="true"></span>Live demo</a>
             </div>
           </div>
+          <a class="project-media" href="projects/taxibot.html" aria-label="Read the TaxiBot case study">
+            <img src="assets/images/projects/taxibot-dashboard.png" alt="TaxiBot dashboard showing natural-language prompts, dataset metrics, and interactive taxi charts" width="1920" height="1014" loading="lazy">
+          </a>
           <h3>TaxiBot</h3>
           <p>Natural-language business-intelligence copilot that converts questions into SQLite queries, selects a chart, and explains the result.</p>
           <ul class="result-list">
@@ -207,10 +223,14 @@
           <div class="project-topline">
             <span class="project-index mono">03 / LLM Product</span>
             <div class="project-links">
+              <a href="projects/shopgenie.html" aria-label="Read the ShopGenie-E case study">Case study →</a>
               <a href="https://github.com/KrishnaSanjay21/shopgenie" target="_blank" rel="noopener" aria-label="Open ShopGenie-E source code">Code ↗</a>
               <a class="live-link" href="https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/" target="_blank" rel="noopener" aria-label="Open live ShopGenie-E demo"><span class="live-dot" aria-hidden="true"></span>Live demo</a>
             </div>
           </div>
+          <a class="project-media" href="projects/shopgenie.html" aria-label="Read the ShopGenie-E case study">
+            <img src="assets/images/projects/shopgenie-interface.png" alt="ShopGenie-E interface with agent monitor and product-research prompt" width="1280" height="720" loading="lazy">
+          </a>
           <h3>ShopGenie-E</h3>
           <p>Multi-agent shopping decision-support application that turns a shopper’s intent, budget, and product constraints into ranked comparisons instead of a generic results list.</p>
           <ul class="result-list">
@@ -394,20 +414,21 @@
           <div class="timeline" aria-label="Professional experience">
             <article class="timeline-item">
               <div class="timeline-marker" aria-hidden="true"></div>
-              <p class="timeline-meta mono">Computer vision · Edge deployment</p>
-              <h3>Computer Vision Engineer · POWO Vision</h3>
+              <p class="timeline-meta mono">Feb 2026–Present · Boca Raton, Florida</p>
+              <h3>Machine Learning Engineer · POWO Studios</h3>
               <ul>
-                <li>Built a real-time restaurant-inventory detection and tracking pipeline with YOLO, ByteTrack, and OpenCV.</li>
-                <li>Worked across Jetson edge inference, Roboflow-assisted data collection, an AWS backend, and a Next.js operations dashboard.</li>
+                <li>Own the inventory MVP architecture and end-to-end implementation in a two-person team, advancing the system toward a September 2026 pilot.</li>
+                <li>Engineered the YOLOv11s, OCR, ByteTrack, zone-logic, and Supabase/PostgreSQL pipeline, reaching 91.6% mAP@50 and routing uncertain detections to a vision-language fallback.</li>
+                <li>Hardened delivery with Docker, CI/CD, scheduled jobs, drift monitoring, and automated regression coverage across 498 API and console test files.</li>
               </ul>
             </article>
             <article class="timeline-item">
               <div class="timeline-marker" aria-hidden="true"></div>
-              <p class="timeline-meta mono">2023 · Navi Mumbai, India</p>
+              <p class="timeline-meta mono">Apr–Jul 2023 · Navi Mumbai, India</p>
               <h3>Machine Learning Intern · RedFiber</h3>
               <ul>
-                <li>Developed the Aizer research-automation workflow using NLP, model evaluation, and feature engineering.</li>
-                <li>Built and evaluated a logistic-regression fake-news classifier for internal experimentation.</li>
+                <li>Co-developed the Aizer research-automation workflow with foundation models and NLP, reducing manual research time by 40%.</li>
+                <li>Built preprocessing and FAISS retrieval modules, then established repeatable ROUGE, BLEU, and semantic-similarity quality gates.</li>
               </ul>
             </article>
           </div>
@@ -416,7 +437,7 @@
             <p class="section-kicker">Education</p>
             <h3>M.S. Data Science &amp; Analytics</h3>
             <p>Florida Atlantic University · 2024–2026</p>
-            <strong>3.7 GPA</strong>
+            <strong>3.89 GPA</strong>
             <hr>
             <h3>B.Tech. Computer Science &amp; Business Systems</h3>
             <p>Bharati Vidyapeeth · 2020–2024</p>

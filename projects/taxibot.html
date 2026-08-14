@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study: TaxiBot, a natural-language business-intelligence copilot for 50,000 NYC taxi trip records.">
+  <meta name="theme-color" content="#0b0f17">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="TaxiBot Natural-Language BI Copilot — Krishna Vaddi">
+  <meta property="og:description" content="From a business question to SQL, an interactive chart, and a plain-English insight.">
+  <meta property="og:url" content="https://krishnasanjay21.github.io/portfolio/projects/taxibot.html">
+  <meta property="og:image" content="https://krishnasanjay21.github.io/portfolio/assets/images/projects/taxibot-dashboard.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://krishnasanjay21.github.io/portfolio/projects/taxibot.html">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%230b0f17%22/><path d=%22M18 14v36M46 14 28 32l18 18%22 fill=%22none%22 stroke=%22%23f5a742%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>">
+  <title>TaxiBot Natural-Language BI Copilot — Krishna Vaddi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/custom.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"SoftwareApplication","name":"TaxiBot","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/","codeRepository":"https://github.com/KrishnaSanjay21/taxibot","author":{"@type":"Person","name":"Krishna Sanjay Vaddi"}}
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top"><div class="nav shell">
+    <a class="brand" href="../index.html" aria-label="Krishna Vaddi, portfolio home"><img src="../krishna_vaddi.webp" alt="" width="32" height="32"><span class="status-dot" aria-hidden="true"></span><span>Krishna Vaddi</span></a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="siteNav"><span class="sr-only">Open navigation</span><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></button>
+    <nav class="nav-links" id="siteNav" aria-label="Primary navigation"><a href="../index.html#projects">Projects</a><a href="../index.html#experience">Experience</a><a href="../index.html#skills">Skills</a><a href="../index.html#publications">Publications</a><a href="#contact">Contact</a></nav>
+    <div class="nav-actions"><button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light theme" title="Switch theme"><span aria-hidden="true">◐</span></button><a class="button button-small button-ghost" href="../assets/documents/Krishna_Sanjay_Vaddi_ML_Engineer_Resume.pdf" download>Résumé ↓</a><a class="button button-small button-ghost" href="mailto:krishnasanjayvaddi2@gmail.com">Let's talk</a></div>
+  </div></header>
+
+  <main class="case-main" id="main-content">
+    <section class="case-hero shell">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="../index.html">Portfolio</a><span>/</span><a href="../index.html#projects">Projects</a><span>/</span><span>TaxiBot</span></nav>
+      <div class="case-hero-grid">
+        <div><p class="section-kicker">LLM product · Analytics</p><h1>TaxiBot</h1><p class="case-deck">A natural-language business-intelligence copilot that plans SQLite queries, executes them over a deterministic taxi dataset, selects a visualization, and explains the result.</p></div>
+        <div class="case-actions"><a class="button button-primary" href="https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/" target="_blank" rel="noopener">Open live demo ↗</a><a class="button button-ghost" href="https://github.com/KrishnaSanjay21/taxibot" target="_blank" rel="noopener">View source ↗</a></div>
+      </div>
+      <div class="case-stats" aria-label="Project evidence">
+        <div><strong>50K</strong><span>Deterministically generated trip records</span></div><div><strong>17</strong><span>Queryable dimensions and measures</span></div><div><strong>6</strong><span>Supported visualization types</span></div><div><strong>2022–24</strong><span>Time range represented in the dataset</span></div>
+      </div>
+    </section>
+
+    <figure class="case-visual shell"><div class="case-visual-frame"><img src="../assets/images/projects/taxibot-dashboard.png" alt="TaxiBot dashboard with suggested questions, taxi metrics, and Plotly charts" width="1920" height="1014"></div><figcaption>The deployed Streamlit product pairs a conversational workspace with live dataset context and visual results.</figcaption></figure>
+
+    <div class="case-layout shell">
+      <article class="case-content">
+        <section><p class="section-kicker">The problem</p><h2>Business questions should not wait for dashboard rebuilds.</h2><p>TaxiBot explores a product pattern for self-service analytics: let a user describe the decision in plain English, expose the data schema to the model, and return an inspectable SQL query alongside the chart and explanation.</p><div class="case-callout"><strong>Product boundary</strong><p>The included 50,000-row dataset is synthetic and seeded for reproducibility. It demonstrates the interaction and analytics system without presenting generated records as official NYC TLC data.</p></div></section>
+
+        <section><p class="section-kicker">System design</p><h2>One structured response controls the query, chart, and explanation.</h2>
+          <ol class="case-flow">
+            <li><strong>Capture the question</strong><p>Streamlit presents suggested analyses, maintains multi-turn conversation state, and accepts a free-form business question.</p></li>
+            <li><strong>Plan against the schema</strong><p>Groq-hosted Llama 3.3 70B receives the exact SQLite schema and returns JSON containing SQL, chart type, title, axes, and an insight.</p></li>
+            <li><strong>Execute and shape</strong><p>SQLite runs the query and Pandas produces a consistent table for downstream rendering.</p></li>
+            <li><strong>Render the answer</strong><p>Plotly dispatches bar, line, scatter, pie, histogram, or heatmap views while the interface preserves the raw query result.</p></li>
+          </ol>
+        </section>
+
+        <section><p class="section-kicker">Product decisions</p><h2>Designed for inspectability, not a black-box answer.</h2>
+          <h3>Schema-grounded planning</h3><p>The system prompt enumerates every available field and constrains the response to a known JSON contract. That lets the interface handle model output as a plan rather than an unstructured paragraph.</p>
+          <h3>Zero-setup evaluation data</h3><p>A fixed random seed creates the database on first run, including indexes for hour and borough. Reviewers can reproduce the same product behavior without downloading a dataset.</p>
+          <h3>Chart dispatch</h3><p>The LLM proposes the visualization, while deterministic Python code owns the actual Plotly construction and theme.</p>
+        </section>
+
+        <section><p class="section-kicker">Limits &amp; hardening</p><h2>The next production steps are explicit.</h2><ul><li>Add a SELECT-only SQL parser and run the database connection in read-only mode before using the pattern with sensitive data.</li><li>Validate generated column names and the full response against a typed schema before execution.</li><li>Add golden-question evaluation for SQL correctness, chart choice, and explanation faithfulness.</li><li>Replace the demonstration data with governed warehouse access and row-level permissions for a production deployment.</li></ul></section>
+      </article>
+
+      <aside class="case-sidebar" aria-label="Project summary">
+        <div class="case-sidebar-card"><h2>Project scope</h2><dl class="case-meta"><div><dt>Role</dt><dd>Product and ML engineering</dd></div><div><dt>Interface</dt><dd>Streamlit</dd></div><div><dt>Model</dt><dd>Groq · Llama 3.3 70B</dd></div><div><dt>Data</dt><dd>SQLite · Pandas · 50,000 seeded rows</dd></div><div><dt>Visualization</dt><dd>Plotly Express</dd></div></dl></div>
+        <div class="case-sidebar-card"><h2>Core concerns</h2><div class="tag-list"><span>Text-to-SQL</span><span>Structured output</span><span>Conversation state</span><span>BI</span></div></div>
+      </aside>
+    </div>
+    <nav class="case-nav shell" aria-label="Case study navigation"><a href="yolov11-int8.html">← Previous: YOLOv11 INT8</a><a href="shopgenie.html">Next: ShopGenie-E →</a></nav>
+  </main>
+  <footer id="contact"><div class="shell footer-bottom"><p>© 2026 Krishna Sanjay Vaddi</p><a href="mailto:krishnasanjayvaddi2@gmail.com">Start a conversation ↗</a></div></footer>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -22,6 +22,8 @@ Each featured project links to its public source code. The homicide-clearance pr
 
 Every featured card includes an expandable architecture breakdown covering data flow, model or analysis components, validation, outputs, and deployment boundaries.
 
+The portfolio also includes dedicated, evidence-based case studies for the YOLOv11 TensorRT audit suite, TaxiBot, and ShopGenie-E, plus a downloadable ML Engineer résumé.
+
 ## Local development
 
 No build step is required.
@@ -38,8 +40,15 @@ Then open `http://localhost:4173`.
 portfolio/
 ├── index.html
 ├── krishna_vaddi.webp
+├── sitemap.xml
+├── projects/
+│   ├── yolov11-int8.html
+│   ├── taxibot.html
+│   └── shopgenie.html
 └── assets/
     ├── css/custom.css
+    ├── documents/
+    ├── images/
     └── js/main.js
 ```
 
