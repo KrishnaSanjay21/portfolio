@@ -1,6 +1,6 @@
 # Krishna Sanjay Vaddi - Portfolio
 
-A fast, accessible static portfolio for machine learning engineer and data scientist Krishna Sanjay Vaddi.
+A fast, accessible static portfolio for machine learning engineer and data scientist Krishna Sanjay Vaddi, spanning deployable AI, governed analytics, and decision-support systems.
 
 **Live site:** [krishnasanjay21.github.io/portfolio](https://krishnasanjay21.github.io/portfolio/)
 
@@ -17,8 +17,10 @@ A fast, accessible static portfolio for machine learning engineer and data scien
 - [TaxiBot](https://taxibot-3bq2vahloszdn7mbrjkh8u.streamlit.app/) - natural-language-to-SQL business-intelligence copilot
 - [ShopGenie-E](https://shopgenie-38esar44rpqhmaz9r3it3b.streamlit.app/) - multi-agent product research, requirements scoring, and comparison dashboard
 - [DataLens](https://datalens-x4seve4uqecrujmqwmzoth.streamlit.app/) - zero-configuration exploratory data analysis
+- [RxGuard](https://rxguard-pbm-claims-analytics-dashboard-jjemrsisptbofgdghqllgr.streamlit.app/client_reporting) - synthetic PBM claims analytics and governed client reporting
+- [ClientPulse](https://clientpulse-vxg5ybjezfv7yfmjxmhpmd.streamlit.app/client_pitch) - multi-client KPI dashboard with internal and client-facing views
 
-All nine public projects have dedicated, evidence-based case studies. Real interface captures are used where a deployed product exists; projects without screenshots use responsive system-architecture diagrams. Each page explains the problem, data flow, engineering decisions, outputs, limitations, and next milestone.
+Eleven public projects have dedicated, evidence-based case studies. Real interface captures are used where a deployed product exists; projects without screenshots use responsive system-architecture diagrams. Each page explains the problem, data flow, engineering decisions, outputs, and limitations. Additional public repositories cover marketing mix optimization, clinical program evaluation, credit risk, and lender-data integration.
 
 ## Local development
 
@@ -34,6 +36,8 @@ Then open `http://localhost:4173`.
 
 ```text
 projects/
+|-- rxguard.html
+|-- clientpulse.html
 |-- yolov11-int8.html
 |-- taxibot.html
 |-- shopgenie.html
