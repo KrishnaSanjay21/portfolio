@@ -1,11 +1,14 @@
 # Krishna Sanjay Vaddi - Portfolio
 
-A fast, accessible static portfolio for machine learning engineer and data scientist Krishna Sanjay Vaddi, spanning deployable AI, governed analytics, and decision-support systems.
+A fast, accessible static portfolio for data and machine learning engineer Krishna Sanjay Vaddi, spanning reliable data platforms, governed analytics, and deployable AI systems.
 
 **Live site:** [krishnasanjay21.github.io/portfolio](https://krishnasanjay21.github.io/portfolio/)
 
 ## What the site highlights
 
+- AWS, Snowflake, dbt, PostgreSQL, and API-driven data platforms
+- ERP migration governance, reconciliation, and live accounting UAT
+- Real public-data analytics across restaurants, healthcare, finance, and aviation
 - Edge computer vision and TensorRT validation
 - LLM-powered analytics products with working demos
 - Forecasting, causal inference, and statistical modeling
@@ -20,7 +23,7 @@ A fast, accessible static portfolio for machine learning engineer and data scien
 - [RxGuard](https://rxguard-pbm-claims-analytics-dashboard-jjemrsisptbofgdghqllgr.streamlit.app/client_reporting) - synthetic PBM claims analytics and governed client reporting
 - [ClientPulse](https://clientpulse-vxg5ybjezfv7yfmjxmhpmd.streamlit.app/client_pitch) - multi-client KPI dashboard with internal and client-facing views
 
-Eleven public projects have dedicated, evidence-based case studies. Real interface captures are used where a deployed product exists; projects without screenshots use responsive system-architecture diagrams. Each page explains the problem, data flow, engineering decisions, outputs, and limitations. Additional public repositories cover marketing mix optimization, clinical program evaluation, credit risk, and lender-data integration.
+Eleven public projects retain dedicated, evidence-based case studies. A new recent-systems section adds the Restaurant Operations Data Platform, ERPNext Order-to-Cash Governance, SEC Financial Data Warehouse, CMS Hospital Benchmarking, Airline Disruption Prediction, and Medicare Part D Analytics. Real interface captures are used where a verified product or dashboard exists; every claim is scoped to the evidence available in its repository.
 
 ## Local development
 
