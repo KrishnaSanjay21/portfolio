@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Retail demand forecasting and inventory planning workspace</title>
+  <desc id="desc">A professional illustrative dashboard showing historical demand, a forecast interval, chronological backtesting, and inventory policy outputs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071422"/>
+      <stop offset="1" stop-color="#0d2037"/>
+    </linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#6ea8fe" stop-opacity=".30"/>
+      <stop offset="1" stop-color="#6ea8fe" stop-opacity=".04"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#112844"/>
+      <stop offset="1" stop-color="#0b1c30"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020916" flood-opacity=".34"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1360" cy="-30" r="360" fill="#2d6bb3" opacity=".08"/>
+
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="86" y="90" fill="#7f9abb" font-size="18" font-weight="700" letter-spacing="3">DEMAND PLANNING WORKSPACE</text>
+    <text x="86" y="143" fill="#f4f8ff" font-size="38" font-weight="750">Forecast demand. Plan inventory.</text>
+    <text x="86" y="180" fill="#9db0c8" font-size="19">Leakage-safe features · chronological backtest · service-level policy</text>
+    <g transform="translate(1263 78)">
+      <rect width="250" height="48" rx="24" fill="#123052" stroke="#315b85"/>
+      <circle cx="27" cy="24" r="7" fill="#34d399"/>
+      <text x="47" y="30" fill="#b8c9dc" font-size="15" font-weight="650">ILLUSTRATIVE VIEW</text>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="70" y="226" width="1040" height="566" rx="22" fill="#0c1a2b" stroke="#274663"/>
+      <rect x="1140" y="226" width="390" height="268" rx="22" fill="url(#panel)" stroke="#274663"/>
+      <rect x="1140" y="524" width="390" height="268" rx="22" fill="url(#panel)" stroke="#274663"/>
+    </g>
+
+    <text x="108" y="282" fill="#f4f8ff" font-size="23" font-weight="700">Daily unit demand</text>
+    <text x="108" y="314" fill="#819ab8" font-size="15">Historical observations and 28-day forecast interval</text>
+
+    <g transform="translate(108 346)">
+      <g stroke="#223b55" stroke-width="1">
+        <line x1="0" y1="0" x2="950" y2="0"/>
+        <line x1="0" y1="90" x2="950" y2="90"/>
+        <line x1="0" y1="180" x2="950" y2="180"/>
+        <line x1="0" y1="270" x2="950" y2="270"/>
+        <line x1="0" y1="360" x2="950" y2="360"/>
+      </g>
+
+      <g fill="#6f88a6" font-size="13">
+        <text x="0" y="394">WEEK 01</text>
+        <text x="250" y="394">WEEK 05</text>
+        <text x="500" y="394">WEEK 09</text>
+        <text x="748" y="394">FORECAST</text>
+      </g>
+
+      <line x1="690" y1="-8" x2="690" y2="360" stroke="#527399" stroke-width="2" stroke-dasharray="7 9"/>
+      <text x="705" y="18" fill="#8fa8c3" font-size="13" font-weight="650">FORECAST START</text>
+
+      <path d="M690 154 C735 126 770 132 806 106 C846 78 900 96 950 52 L950 252 C900 228 852 238 806 213 C760 188 730 202 690 188 Z" fill="url(#band)"/>
+
+      <path d="M0 255 C34 244 48 204 82 218 S128 278 164 244 S217 126 258 162 S300 247 338 222 S384 103 426 145 S478 232 518 198 S564 79 610 131 S648 208 690 171" fill="none" stroke="#f2f6fb" stroke-width="5" stroke-linecap="round"/>
+      <path d="M690 171 C735 147 770 156 806 130 C850 99 900 119 950 82" fill="none" stroke="#6ea8fe" stroke-width="6" stroke-linecap="round"/>
+
+      <g fill="#f2f6fb">
+        <circle cx="82" cy="218" r="5"/><circle cx="258" cy="162" r="5"/><circle cx="426" cy="145" r="5"/><circle cx="610" cy="131" r="5"/>
+      </g>
+      <g fill="#6ea8fe">
+        <circle cx="690" cy="171" r="6"/><circle cx="806" cy="130" r="6"/><circle cx="950" cy="82" r="6"/>
+      </g>
+    </g>
+
+    <g transform="translate(108 748)" font-size="14" font-weight="650">
+      <line x1="0" y1="0" x2="30" y2="0" stroke="#f2f6fb" stroke-width="5" stroke-linecap="round"/>
+      <text x="42" y="5" fill="#a8b7cb">Actual demand</text>
+      <line x1="182" y1="0" x2="212" y2="0" stroke="#6ea8fe" stroke-width="5" stroke-linecap="round"/>
+      <text x="224" y="5" fill="#a8b7cb">Forecast</text>
+      <rect x="340" y="-10" width="30" height="20" rx="4" fill="#6ea8fe" opacity=".2"/>
+      <text x="382" y="5" fill="#a8b7cb">Prediction interval</text>
+    </g>
+
+    <g transform="translate(1178 266)">
+      <text fill="#7f9abb" font-size="14" font-weight="700" letter-spacing="2">VALIDATION</text>
+      <text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Chronological backtest</text>
+      <text y="76" fill="#9db0c8" font-size="15">Training data stays behind the cutoff.</text>
+      <g transform="translate(0 116)">
+        <rect width="314" height="22" rx="11" fill="#152d49"/>
+        <rect width="208" height="22" rx="11" fill="#477fbf"/>
+        <rect x="216" width="98" height="22" rx="11" fill="#6ea8fe"/>
+        <text y="56" fill="#88a0bc" font-size="13">TRAIN WINDOW</text>
+        <text x="214" y="56" fill="#88a0bc" font-size="13">HOLDOUT</text>
+      </g>
+      <g transform="translate(0 206)">
+        <rect width="142" height="34" rx="17" fill="#10243b" stroke="#315b85"/>
+        <text x="18" y="23" fill="#b8c9dc" font-size="13" font-weight="650">WAPE · MAE · BIAS</text>
+      </g>
+    </g>
+
+    <g transform="translate(1178 564)">
+      <text fill="#7f9abb" font-size="14" font-weight="700" letter-spacing="2">DECISION LAYER</text>
+      <text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Inventory policy</text>
+      <text y="76" fill="#9db0c8" font-size="15">Forecast uncertainty becomes an action.</text>
+      <g transform="translate(0 112)">
+        <rect width="145" height="92" rx="14" fill="#0c1c30" stroke="#294b6d"/>
+        <text x="18" y="29" fill="#819ab8" font-size="12" font-weight="700">SAFETY STOCK</text>
+        <path d="M18 66 L44 54 L70 60 L96 38 L126 28" fill="none" stroke="#34d399" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(165 112)">
+        <rect width="149" height="92" rx="14" fill="#0c1c30" stroke="#294b6d"/>
+        <text x="18" y="29" fill="#819ab8" font-size="12" font-weight="700">REORDER POINT</text>
+        <rect x="18" y="51" width="112" height="12" rx="6" fill="#153451"/>
+        <rect x="18" y="51" width="79" height="12" rx="6" fill="#6ea8fe"/>
+      </g>
+    </g>
+  </g>
+</svg>
