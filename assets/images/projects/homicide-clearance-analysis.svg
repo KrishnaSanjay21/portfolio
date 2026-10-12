@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">US homicide clearance analysis evidence workspace</title>
+  <desc id="desc">A project evidence dashboard showing long-run clearance and anonymity trends, a negative correlation, model comparison, and reported evaluation metrics.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071422"/><stop offset="1" stop-color="#0d2037"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#112844"/><stop offset="1" stop-color="#0b1c30"/></linearGradient>
+    <linearGradient id="clearArea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#42c3b4" stop-opacity=".24"/><stop offset="1" stop-color="#42c3b4" stop-opacity=".01"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020916" flood-opacity=".34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><circle cx="1370" cy="-20" r="360" fill="#2b9f92" opacity=".07"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="86" y="90" fill="#70aaa4" font-size="18" font-weight="700" letter-spacing="3">LONG-RUN EVIDENCE WORKSPACE</text>
+    <text x="86" y="143" fill="#f4f8ff" font-size="38" font-weight="750">Track the trend. Test the relationship.</text>
+    <text x="86" y="180" fill="#9db0c8" font-size="19">FBI case records · engineered anonymity signal · comparative modeling</text>
+    <g transform="translate(1275 78)"><rect width="238" height="48" rx="24" fill="#10323a" stroke="#2d6f6a"/><circle cx="27" cy="24" r="7" fill="#34d399"/><text x="47" y="30" fill="#bee0dc" font-size="15" font-weight="650">PROJECT EVIDENCE</text></g>
+
+    <g filter="url(#shadow)"><rect x="70" y="226" width="1040" height="566" rx="22" fill="#0c1a2b" stroke="#274663"/><rect x="1140" y="226" width="390" height="268" rx="22" fill="url(#panel)" stroke="#2b555d"/><rect x="1140" y="524" width="390" height="268" rx="22" fill="url(#panel)" stroke="#2b555d"/></g>
+    <text x="108" y="282" fill="#f4f8ff" font-size="23" font-weight="700">Clearance and anonymous-case trend</text>
+    <text x="108" y="314" fill="#819ab8" font-size="15">National annual measures across 47 years of FBI case data</text>
+
+    <g transform="translate(108 350)">
+      <g stroke="#223b55"><line x1="0" y1="0" x2="950" y2="0"/><line x1="0" y1="90" x2="950" y2="90"/><line x1="0" y1="180" x2="950" y2="180"/><line x1="0" y1="270" x2="950" y2="270"/><line x1="0" y1="360" x2="950" y2="360"/></g>
+      <path d="M0 62 C95 72 164 92 238 112 S382 155 474 177 S650 224 748 254 S875 289 950 312 L950 360 L0 360 Z" fill="url(#clearArea)"/>
+      <path d="M0 62 C95 72 164 92 238 112 S382 155 474 177 S650 224 748 254 S875 289 950 312" fill="none" stroke="#42c3b4" stroke-width="7" stroke-linecap="round"/>
+      <path d="M0 318 C105 301 170 285 245 263 S385 220 472 198 S638 154 744 117 S874 83 950 62" fill="none" stroke="#f1a85b" stroke-width="6" stroke-linecap="round"/>
+      <g fill="#42c3b4"><circle cx="238" cy="112" r="6"/><circle cx="474" cy="177" r="6"/><circle cx="748" cy="254" r="6"/></g><g fill="#f1a85b"><circle cx="245" cy="263" r="6"/><circle cx="472" cy="198" r="6"/><circle cx="744" cy="117" r="6"/></g>
+      <g fill="#6f88a6" font-size="13"><text x="0" y="395">1976</text><text x="300" y="395">1992</text><text x="610" y="395">2008</text><text x="910" y="395">2023</text></g>
+      <g transform="translate(550 148)"><rect width="245" height="80" rx="14" fill="#142642" stroke="#48606f"/><text x="18" y="30" fill="#9db0c8" font-size="13" font-weight="700">NEGATIVE ASSOCIATION</text><text x="18" y="59" fill="#f4f8ff" font-size="22" font-weight="750">r = −0.73</text></g>
+    </g>
+    <g transform="translate(108 748)" font-size="14" font-weight="650"><line x1="0" y1="0" x2="30" y2="0" stroke="#42c3b4" stroke-width="6"/><text x="42" y="5" fill="#a8b7cb">Clearance rate</text><line x1="186" y1="0" x2="216" y2="0" stroke="#f1a85b" stroke-width="6"/><text x="228" y="5" fill="#a8b7cb">Anonymous share</text></g>
+
+    <g transform="translate(1178 266)">
+      <text fill="#70aaa4" font-size="14" font-weight="700" letter-spacing="2">MODEL SELECTION</text><text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Comparative evaluation</text><text y="76" fill="#9db0c8" font-size="15">Fit and extrapolation are judged together.</text>
+      <g transform="translate(0 111)" font-size="13"><text y="18" fill="#dce7f2">Polynomial degree 3</text><rect y="31" width="310" height="13" rx="7" fill="#173044"/><rect y="31" width="260" height="13" rx="7" fill="#42c3b4"/><text y="78" fill="#9db0c8">Random forest</text><rect y="92" width="310" height="13" rx="7" fill="#173044"/><rect y="92" width="205" height="13" rx="7" fill="#477a84"/><text y="139" fill="#9db0c8">Support vector regression</text><rect y="153" width="310" height="13" rx="7" fill="#173044"/><rect y="153" width="174" height="13" rx="7" fill="#477a84"/></g>
+      <g transform="translate(0 222)"><rect width="185" height="32" rx="16" fill="#13333b" stroke="#2d6f6a"/><text x="17" y="22" fill="#bce2dd" font-size="12" font-weight="700">SELECTED FOR TREND</text></g>
+    </g>
+
+    <g transform="translate(1178 564)">
+      <text fill="#70aaa4" font-size="14" font-weight="700" letter-spacing="2">REPORTED RESULTS</text><text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Evidence summary</text><text y="76" fill="#9db0c8" font-size="15">Transparent metrics with documented limits.</text>
+      <g transform="translate(0 112)"><rect width="145" height="90" rx="14" fill="#0c1c30" stroke="#2b555d"/><text x="18" y="28" fill="#819ab8" font-size="12" font-weight="700">MODEL FIT</text><text x="18" y="65" fill="#f4f8ff" font-size="28" font-weight="750">R² 0.81</text></g>
+      <g transform="translate(165 112)"><rect width="149" height="90" rx="14" fill="#0c1c30" stroke="#2b555d"/><text x="18" y="28" fill="#819ab8" font-size="12" font-weight="700">ERROR</text><text x="18" y="65" fill="#f4f8ff" font-size="28" font-weight="750">1.32%</text></g>
+      <text y="232" fill="#7f93ad" font-size="13">Association is not presented as causation.</text>
+    </g>
+  </g>
+</svg>

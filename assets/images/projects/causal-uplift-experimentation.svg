@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Causal uplift experiment and targeting workspace</title>
+  <desc id="desc">An illustrative dashboard showing randomized assignment, an uplift curve, treatment effect uncertainty, and a targeting policy.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071422"/><stop offset="1" stop-color="#0d2037"/></linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#112844"/><stop offset="1" stop-color="#0b1c30"/></linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#8b7cf6" stop-opacity=".30"/><stop offset="1" stop-color="#8b7cf6" stop-opacity=".02"/></linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#020916" flood-opacity=".34"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/><circle cx="1370" cy="-30" r="360" fill="#6d5ce7" opacity=".08"/>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif">
+    <text x="86" y="90" fill="#9388c8" font-size="18" font-weight="700" letter-spacing="3">EXPERIMENT DECISION WORKSPACE</text>
+    <text x="86" y="143" fill="#f4f8ff" font-size="38" font-weight="750">Measure effect. Target the persuadable.</text>
+    <text x="86" y="180" fill="#9db0c8" font-size="19">Randomized evidence · CATE scoring · incremental-value policy</text>
+    <g transform="translate(1263 78)"><rect width="250" height="48" rx="24" fill="#1d2850" stroke="#574d98"/><circle cx="27" cy="24" r="7" fill="#34d399"/><text x="47" y="30" fill="#c6c3df" font-size="15" font-weight="650">ILLUSTRATIVE VIEW</text></g>
+
+    <g filter="url(#shadow)"><rect x="70" y="226" width="1040" height="566" rx="22" fill="#0c1a2b" stroke="#274663"/><rect x="1140" y="226" width="390" height="268" rx="22" fill="url(#panel)" stroke="#35496f"/><rect x="1140" y="524" width="390" height="268" rx="22" fill="url(#panel)" stroke="#35496f"/></g>
+    <text x="108" y="282" fill="#f4f8ff" font-size="23" font-weight="700">Cumulative incremental conversions</text>
+    <text x="108" y="314" fill="#819ab8" font-size="15">Customers ranked from highest to lowest estimated uplift</text>
+
+    <g transform="translate(108 350)">
+      <g stroke="#223b55"><line x1="0" y1="0" x2="950" y2="0"/><line x1="0" y1="90" x2="950" y2="90"/><line x1="0" y1="180" x2="950" y2="180"/><line x1="0" y1="270" x2="950" y2="270"/><line x1="0" y1="360" x2="950" y2="360"/></g>
+      <line x1="0" y1="360" x2="950" y2="62" stroke="#657a93" stroke-width="3" stroke-dasharray="10 12"/>
+      <path d="M0 360 C80 270 150 210 235 169 S385 94 490 72 S680 54 780 47 S890 43 950 40 L950 360 Z" fill="url(#area)"/>
+      <path d="M0 360 C80 270 150 210 235 169 S385 94 490 72 S680 54 780 47 S890 43 950 40" fill="none" stroke="#8b7cf6" stroke-width="7" stroke-linecap="round"/>
+      <g fill="#8b7cf6"><circle cx="235" cy="169" r="6"/><circle cx="490" cy="72" r="6"/><circle cx="780" cy="47" r="6"/></g>
+      <g fill="#6f88a6" font-size="13"><text x="0" y="395">TOP 10%</text><text x="430" y="395">TOP 50%</text><text x="870" y="395">ALL CUSTOMERS</text></g>
+      <g transform="translate(535 118)"><rect width="252" height="76" rx="14" fill="#142642" stroke="#574d98"/><text x="18" y="28" fill="#9db0c8" font-size="13" font-weight="700">TARGETING ADVANTAGE</text><text x="18" y="55" fill="#f4f8ff" font-size="16">Uplift policy above random</text></g>
+    </g>
+    <g transform="translate(108 748)" font-size="14" font-weight="650"><line x1="0" y1="0" x2="30" y2="0" stroke="#8b7cf6" stroke-width="6"/><text x="42" y="5" fill="#a8b7cb">Observed uplift policy</text><line x1="226" y1="0" x2="256" y2="0" stroke="#657a93" stroke-width="3" stroke-dasharray="8 8"/><text x="268" y="5" fill="#a8b7cb">Random targeting</text></g>
+
+    <g transform="translate(1178 266)">
+      <text fill="#9388c8" font-size="14" font-weight="700" letter-spacing="2">EXPERIMENT</text><text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Randomized assignment</text><text y="76" fill="#9db0c8" font-size="15">Estimate lift before optimizing reach.</text>
+      <g transform="translate(0 112)"><rect width="145" height="90" rx="14" fill="#0c1c30" stroke="#3a4e72"/><circle cx="27" cy="31" r="10" fill="#8b7cf6"/><text x="48" y="36" fill="#e8ebf7" font-size="14" font-weight="700">TREATMENT</text><rect x="20" y="62" width="104" height="10" rx="5" fill="#8b7cf6"/></g>
+      <g transform="translate(165 112)"><rect width="149" height="90" rx="14" fill="#0c1c30" stroke="#3a4e72"/><circle cx="27" cy="31" r="10" fill="#42c3b4"/><text x="48" y="36" fill="#e8ebf7" font-size="14" font-weight="700">CONTROL</text><rect x="20" y="62" width="104" height="10" rx="5" fill="#42c3b4"/></g>
+      <g transform="translate(0 220)"><line x1="26" y1="0" x2="288" y2="0" stroke="#6d7f99" stroke-width="3"/><line x1="94" y1="-13" x2="94" y2="13" stroke="#8b7cf6" stroke-width="5"/><circle cx="138" cy="0" r="8" fill="#f4f8ff"/><text x="0" y="34" fill="#819ab8" font-size="12">95% CI</text><text x="218" y="34" fill="#819ab8" font-size="12">ATE</text></g>
+    </g>
+
+    <g transform="translate(1178 564)">
+      <text fill="#9388c8" font-size="14" font-weight="700" letter-spacing="2">DECISION LAYER</text><text y="43" fill="#f4f8ff" font-size="25" font-weight="720">Treatment policy</text><text y="76" fill="#9db0c8" font-size="15">Act on incremental response, not propensity.</text>
+      <g transform="translate(0 108)" font-size="12" font-weight="700"><rect width="148" height="58" rx="12" fill="#192956" stroke="#6659bd"/><text x="20" y="35" fill="#d9d5ff">PERSUADABLE</text><rect x="164" width="150" height="58" rx="12" fill="#102b35" stroke="#2b7d74"/><text x="187" y="35" fill="#b8eee7">SURE THING</text><rect y="72" width="148" height="58" rx="12" fill="#172338" stroke="#334a65"/><text x="34" y="107" fill="#9db0c8">LOST CAUSE</text><rect x="164" y="72" width="150" height="58" rx="12" fill="#302039" stroke="#78536f"/><text x="184" y="107" fill="#d4b6cb">SLEEPING DOG</text></g>
+      <text y="224" fill="#7f93ad" font-size="13">Prioritize positive incremental effect.</text>
+    </g>
+  </g>
+</svg>
